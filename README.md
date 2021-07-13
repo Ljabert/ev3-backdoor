@@ -4,7 +4,7 @@
 
 This is an alternative to the [EV3 cli](https://github.com/Ljabert/ev3-cli) using a network connection, so you don't have to plug your EV3 to your PC to execute commands.
 
-As far as I am aware there is no ssh server installed on the EV3 by default, so the next best thing is just opening a port and piping all the data to `ash`. That is of course not very secure, as I didn't implement any login or validation, so please for the love of god don't run this on a public network if you dont want your fancy LEGO® robot hacked.
+As far as I am aware there is no `ssh` server installed on the EV3 by default, so the next best thing is just opening a port and piping all the data to `ash`. That is of course not very secure, as I didn't implement any login or validation, so please for the love of god don't run this on a public network if you dont want your fancy LEGO® robot hacked.
 
 ---
 
