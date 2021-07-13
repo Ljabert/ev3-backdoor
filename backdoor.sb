@@ -1,0 +1,40 @@
+EV3.SystemCall("ifconfig | grep 'inet addr' | cut -d: -f2 | awk '{print $1}' > /home/root/lms2012/prjs/ip")
+
+LCD.Clear()
+LCD.StopUpdate()
+
+handle = EV3File.OpenRead("ip")
+
+line = EV3File.ReadLine(handle)
+LCD.Write(30, 10, line)
+line = EV3File.ReadLine(handle)
+LCD.Write(30, 20, line)
+line = EV3File.ReadLine(handle)
+LCD.Write(30, 30, line)
+line = EV3File.ReadLine(handle)
+LCD.Write(30, 40, line)
+
+EV3File.Close(handle)
+EV3.SystemCall("rm -rf /home/root/lms2012/prjs/ip")
+
+LCD.Write(30, 80, "Hold any button")
+LCD.Write(30, 90, "while sending")
+LCD.Write(30, 100, "a request")
+LCD.Write(30, 110, "to stop server")
+
+LCD.Update()
+
+Program.Delay(1000)
+
+loop = "True"
+While loop
+  '  BusyBox v1.13.2 (2010-12-21 19:28:47 CST)
+  ' not exactly the netcat syntax you are used to
+  ' at least it's compiled with -e
+  EV3.SystemCall("nc -l -p 1337 -e ash &")
+  
+  ' break the loop by pressing a button
+  If Text.GetLength(Buttons.Current) > 0 Then
+    loop = "False"
+  EndIf
+EndWhile
