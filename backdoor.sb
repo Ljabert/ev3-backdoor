@@ -28,7 +28,7 @@ Program.Delay(1000)
 
 loop = "True"
 While loop
-  '  BusyBox v1.13.2 (2010-12-21 19:28:47 CST)
+  ' BusyBox v1.13.2 (2010-12-21 19:28:47 CST)
   ' not exactly the netcat syntax you are used to
   ' at least it's compiled with -e
   EV3.SystemCall("nc -l -p 1337 -e ash &")
