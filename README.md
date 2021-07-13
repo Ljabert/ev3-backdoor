@@ -49,7 +49,7 @@ Windows does not come preinstalled with a netcat command, so i recommend install
 
 #### Example:
 ```sh
-<NUL set /p="ls -lah /bin" | ncat 192.168.0.95 1337
+<NUL set /p="ls -lah /" | ncat 192.168.0.95 1337
 ```
 
 ### macOS
