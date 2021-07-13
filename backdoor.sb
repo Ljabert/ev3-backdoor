@@ -17,9 +17,7 @@ LCD.Write(30, 40, line)
 EV3File.Close(handle)
 EV3.SystemCall("rm -rf /home/root/lms2012/prjs/ip")
 
-LCD.Write(30, 80, "Hold any button")
-LCD.Write(30, 90, "while sending")
-LCD.Write(30, 100, "a request")
+LCD.Write(30, 100, "Press any button")
 LCD.Write(30, 110, "to stop server")
 
 LCD.Update()
