@@ -24,15 +24,15 @@ LCD.Update()
 
 Program.Delay(1000)
 
-loop = "True"
-While loop
-  ' BusyBox v1.13.2 (2010-12-21 19:28:47 CST)
+While "True"
+  '  BusyBox v1.13.2 (2010-12-21 19:28:47 CST)
   ' not exactly the netcat syntax you are used to
   ' at least it's compiled with -e
   EV3.SystemCall("nc -l -p 1337 -e ash &")
-  
+
   ' break the loop by pressing a button
   If Text.GetLength(Buttons.Current) > 0 Then
-    loop = "False"
+    EV3.SystemCall("killall nc")
+    Program.End()
   EndIf
 EndWhile
